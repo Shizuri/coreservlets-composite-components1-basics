@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+
+<cc:interface>
+	<cc:attribute name="styleClass"/>
+</cc:interface>
+
+<cc:implementation>
+	<fieldset>
+	<legend>From single object</legend>
+		<ul>
+			<li>ID: #{customerc.customer.id}</li>
+			<li>First Name: #{customerc.customer.firstName}</li>
+			<li>Last Name: #{customerc.customer.lastName}</li>
+			<li>Balance: #{customerc.customer.balance}</li>
+			<li><h:graphicImage library="images" name="#{customerc.customer.image}"/></li>
+		</ul>
+	</fieldset>
+	
+	<fieldset class="#{cc.attrs.styleClass}">
+	<legend>First item from object list with optional styleClass</legend>
+		<ul>
+			<li>ID: #{customerc.customerList[0].id}</li>
+			<li>First Name: #{customerc.customerList[0].firstName}</li>
+			<li>Last Name: #{customerc.customerList[0].lastName}</li>
+			<li>Balance: #{customerc.customerList[0].balance}</li>
+			<li><h:graphicImage library="images" name="#{customerc.customerList[0].image}"/></li>
+		</ul>
+	</fieldset>
+</cc:implementation>
+
+</html>
